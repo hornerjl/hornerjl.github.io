@@ -1,6 +1,6 @@
 # Self Assesment
 
-## **Code Review**
+## Code Review
 
 ## Database
 ### Narrative
