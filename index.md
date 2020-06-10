@@ -1,20 +1,35 @@
-## Welcome to GitHub Pages
+# Self Assesment
 
-You can use the [editor on GitHub](https://github.com/hornerjl/hornerjl.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## **Code Review**
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Database
+### Narrative
+<details>
+    <summary>This artifact is a RESTful API server running on the bottle python framework that serves as a middleware for performing database operations on a mongoDB database hosted on mongoDB’s own Atlas cloud service. It was created for the course CS 340 as a culmination of using python scripts and bash commands to perform operations on a mongoDB database. The data set stored in the collection is supposed to be a set of data related to stock market data for various companies. It originally had routes for basic CRUD operations, a route for performing an aggregation that gets the top 5 performers for a particular industry, and a route for getting a list of different stock entries by ticker values.
+    </summary>
 
-### Markdown
-```
+    My selection of this artifact is based on it demonstrating skill with modern frameworks and making use of a NoSQL database structure while still enforcing some of the structure found in a SQL database by way of the API. A major improvement implemented is forcing api calls to follow a JSON schema allowing for required fields and also in some cases disallows additional properties to be sent up. This enforces a flexible level of uniformity for data entering the databases. Additionally the API is now access controlled showcasing basic access control for an API using a UUID as a token. These tokens can only be obtained via a login route that requires a JSON object containing only a username string and a password string. 
+    All objectives from the enhancement plan have been met in addition to enhancements suggested in the code review. A route for logging in has been added along with an additional route for adding new credentials which is access protected by the same token system that now protects all routes. In addition to access control, the database is now hosted by MongoDB Atlas which is a portable cloud based database service which fulfills the other major goal from the initial upgrade plan. For improvements from the code review, each route has comments detailing its purpose and what parameters it takes in and jsonschema is used to create validation functions that make sure that the data received is correctly formatted before attempting to perform database operations with it. 
+    One of the major challenges was constructing a way to validate something as open ended as JSON. Unlike SQL with its strict database structures, MongoDB is generally a lot more fluid and this requires planning around so that incorrectly formatted data doesn’t get added and break expected returns from future queries. Finally settling on jsonschema seemed like a good fit as it has a natural flow to designing its structures that mimics the exact way I expect the data to look and then compares that with what is actually received surfacing any violations to the end user in human readable terms. Additionally setting up a MongoDB client that could connect with the hosted database took some debugging as access is very specifically controlled and the api call can be a bit tricky to get quite right but doesn’t necessarily throw any errors if formatted incorrectly. Overall this was a good lesson in constructing a controlled access RESTful API that connects to and performs operations on a mongoDB database.
+</details>
 
-theme: jekyll-theme-dinky
-title: Welcome to the hornerjl's homepage!
-description: feel free to bookmark this to keep an eye on my project updates
-```
-### Jekyll Themes
+## Bookshelf
+### Narrative
+<details>
+    <summary>This artifact is demonstrated by the 3D model of a bookshelf. This was done in the C++ language using openGL with freeglut. This project was created 2 months ago as a project done for the course CS 330 Computational Graphics and visualization which focused on 3D graphics software development and openGL as a platform. This project was included as it was part of the core courses  from the recommended courses for the final project for this particular artifact. This was included into my eportfolio because it was something that was designed from scratch by me including the arithmetic done for the various calculations needed including but not limited to the light source, vertices, and camera/object positioning.
+    </summary>
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/hornerjl/hornerjl.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+    This is a Project I am very proud of and consider it to be one of the more valuable learning experiences as I was able to make the environment and object from the ground up. The specific components of the artifact that showcases my skills and abilities in software development are the use of the C++ language, utilization of multiple libraries, working with low level 3D rendering platform. 
+    While creating this artifact I got a better sense of the c++ language and how it can be utilized to create more than just command line based programs. While this is built on a lot of encapsulation and abstraction, it was none the less a useful example of C++ in action. Additionally this was a useful introduction to the intersection between math and programming requiring knowledge of both in equal measure. A major challenge I faced early on was trouble with the C++ library structure. While I have a much better understanding of the roles of header, dll, and library files now, it was difficult to understand the required structure compared to some more modern languages with their package managers that do all of the linking and pathing for you. Additionally drawing out all of the vertices and how they related to each other proved challenging for a more complex object like a bookshelf and was ultimately solved by drawing it all out on a whiteboard. There wasn’t much feedback required for the bookshelf but I still took the time to add some polish like better lighting and getting rid of certain instances of individual triangles clipping into one another. As the object in question is a bookshelf there was a lot of overlap where the shelf meets the outer frame. This had to be solved by changing values to be adjacent rather than overlapping.
+</details>
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Hashtable
+### Narrative
+<details>
+  <summary>This artifact is a hash table that uses an array of vectors to hold auction data from a csv created for the CS 260 class on data structures and algorithms. The hash function takes a string and turns it into a number then performs a modulo operation on it to reduce it to the index location of one of the vectors in the array. Since a vector is the base unit of the hash table, it can be used to hold multiple items thus removing the danger of collisions from identical hashed values. Lookups for searching and deletion are done by running the same math equation to get the index and then iterating through the vector stored at that location til all matches for the search term are found. 
+  </summary>
+  
+    This artifact was selected as it showcases skill with hash tables, one of the most powerful data structures for quick lookup times and also utilization of several other structures working together to create a bigger system including unordered maps, vectors, and arrays. These each provide benefits and compliment each other to create a very efficient lookup table that is still rather flexible. The improvements to the structure include an expanded data set for individual items, a flexible hashing algorithm that can hash any string passed into it allowing for sorting based on multiple headings, and an updated UI that provides the user more control over the hash table operations.
+	The planned enhancements for this artifact were increased object fields and allowing the user to select their own field to sort by from an abridged list of the headers from the csv file. These two were implemented as planned with several additional improvements from the code review including better encapsulation and application of the single responsibility principle to the structure of the program. While this still covers the same course outcomes, these enhancements lead to a more polished artist overall.
+	The process of enhancing the artifact certainly helped deepen my knowledge of C++’s eccentricities in particular and program structure as a whole. One challenge in particular was a bug that cropped up when assigning a new hashTable object to a passed in pointer from the main function. Since this takes place outside of the original scope, the pointer was actually altered to point to a different location than the original passed in memory location. Realizing this led me to refactoring to make the instance of the object and just use a setter for the sortBy property that had led to the new keyword usage in the first place. Another issue was finding a structure that would allow for dynamic object property access based on user input which led me to the unordered_map which allows for accessing properties by their variable names. Overall this was a great opportunity to sharpen my skills with basic program structure and utilize pre-existing data structures and libraries to perform a complex task in a simple way.
+</details>
