@@ -1,0 +1,26 @@
+#Start Server
+python3 RESTful.py
+
+#Get Token
+curl -XPOST -d '{"username": "JamieHorner", "password": "superSecretCode"}' 'http://localhost:4000/login'
+
+#Add login
+curl -XPOST -H 'Token:INSERT_TOKEN_HERE' -d '{"username": "INSERT_USERNAME_HERE", "password": "INSERT_PASSWORD_HERE"}' 'http://localhost:4000/create_login'
+
+#Add record
+curl -XPOST -H 'Token:INSERT_TOKEN_HERE' -d '{"ticker": "A1", "company": "Imaginary Inc", "industry": "Stories", "performance (YTD)": 40.05}' 'http://localhost:4000/create_record'
+
+#Read record
+curl -XGET -H 'Token:INSERT_TOKEN_HERE' 'http://localhost:4000/read_records?ticker=A1'
+
+#Update record
+curl -XPUT -H 'Token:INSERT_TOKEN_HERE' -d '{"ticker": "A1", "field": "newField", "value": "testValue2"}' 'http://localhost:4000/update_record'
+
+#Delete record
+curl -XDELETE -H 'Token:INSERT_TOKEN_HERE' 'http://localhost:4000/delete_record?ticker=A1'
+
+#Create Industry Portfolio(Top 5 Performers)
+curl -XGET -H 'Token:INSERT_TOKEN_HERE' 'http://localhost:4000/portfolio?industry=Stories'
+
+#Get A Report
+curl -XGET -H 'Token:INSERT_TOKEN_HERE' -d '{"tickers": ["A1", "B1"]}' 'http://localhost:4000/report'
