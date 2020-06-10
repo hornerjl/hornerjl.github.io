@@ -13,7 +13,8 @@ This artifact is a RESTful API server running on the bottle python framework tha
     One of the major challenges was constructing a way to validate something as open ended as JSON. Unlike SQL with its strict database structures, MongoDB is generally a lot more fluid and this requires planning around so that incorrectly formatted data doesn’t get added and break expected returns from future queries. Finally settling on jsonschema seemed like a good fit as it has a natural flow to designing its structures that mimics the exact way I expect the data to look and then compares that with what is actually received surfacing any violations to the end user in human readable terms. Additionally setting up a MongoDB client that could connect with the hosted database took some debugging as access is very specifically controlled and the api call can be a bit tricky to get quite right but doesn’t necessarily throw any errors if formatted incorrectly. Overall this was a good lesson in constructing a controlled access RESTful API that connects to and performs operations on a mongoDB database.
 </details>
 
-[Project code can be found here!](./database)
+
+[Project code can be found here!](https://github.com/hornerjl/hornerjl.github.io/tree/master/database)
 
 ## **Modern OpenGL Bookshelf 3D Model**
 ### Narrative
@@ -25,7 +26,8 @@ This artifact is demonstrated by the 3D model of a bookshelf. This was done in t
     While creating this artifact I got a better sense of the c++ language and how it can be utilized to create more than just command line based programs. While this is built on a lot of encapsulation and abstraction, it was none the less a useful example of C++ in action. Additionally this was a useful introduction to the intersection between math and programming requiring knowledge of both in equal measure. A major challenge I faced early on was trouble with the C++ library structure. While I have a much better understanding of the roles of header, dll, and library files now, it was difficult to understand the required structure compared to some more modern languages with their package managers that do all of the linking and pathing for you. Additionally drawing out all of the vertices and how they related to each other proved challenging for a more complex object like a bookshelf and was ultimately solved by drawing it all out on a whiteboard. There wasn’t much feedback required for the bookshelf but I still took the time to add some polish like better lighting and getting rid of certain instances of individual triangles clipping into one another. As the object in question is a bookshelf there was a lot of overlap where the shelf meets the outer frame. This had to be solved by changing values to be adjacent rather than overlapping.
 </details>
 
-[Project code can be found here!](./bookshelf)
+
+[Project code can be found here!](https://github.com/hornerjl/hornerjl.github.io/tree/master/bookshelf)
 
 ## **CSV To Hashtable Converter For Auction Data**
 ### Narrative
@@ -38,4 +40,5 @@ This artifact is a hash table that uses an array of vectors to hold auction data
 	The process of enhancing the artifact certainly helped deepen my knowledge of C++’s eccentricities in particular and program structure as a whole. One challenge in particular was a bug that cropped up when assigning a new hashTable object to a passed in pointer from the main function. Since this takes place outside of the original scope, the pointer was actually altered to point to a different location than the original passed in memory location. Realizing this led me to refactoring to make the instance of the object and just use a setter for the sortBy property that had led to the new keyword usage in the first place. Another issue was finding a structure that would allow for dynamic object property access based on user input which led me to the unordered_map which allows for accessing properties by their variable names. Overall this was a great opportunity to sharpen my skills with basic program structure and utilize pre-existing data structures and libraries to perform a complex task in a simple way.
 </details>
 
-[Project code can be found here!](./hashtable)
+
+[Project code can be found here!](https://github.com/hornerjl/hornerjl.github.io/tree/master/hashtable)
