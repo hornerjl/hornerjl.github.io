@@ -9,17 +9,24 @@
 
 Modern OpenGL Bookshelf 3D Model
 <br/>
+<br/>
+<br/>
+<br/>
 
 The purpose of the first artifact is to render a 3d bookshelf object using modern openGL complete with texture and lighting. Additionally mouse and keyboard controls are implemented to allow for a full 360 view of the object.
+<br/>
 <br/>
 
 Lines 1-11
 <br/>
+<br/>
 
 In addition to the standard namespace and iostream library, we load in libraries that act as helpers to simplify our code for interfacing with openGL including GLM for math, glew/freeglut for cleaner code, and a locally stored SOIL2 library for easily loading textures in a usable form for openGL objects.
 <br/>
+<br/>
 
 Lines 14-62
+<br/>
 <br/>
 
 Next we define some macros and globals that will be required in multiple places throughout our program. This is a good area for some code upgrades as it contains a lot of magic numbers and non-constant values that would be better encapsulated by an instance of a class. Additionally several of these values will be removed entirely as we cut down to one light source. 
@@ -27,138 +34,188 @@ Next we define some macros and globals that will be required in multiple places 
 
 Lines 65-98
 <br/>
+<br/>
 
 Here we define a GLSL shader that will take in our geometry data and render the basic bookshelf based on the output of its own main function which performs calculations and then passes along the data to be rendered by openGL. While there is some annotation, some of it could be improved to be more descriptive of the actual function of each matrix and vector to add to readability.
+<br/>
 <br/>
 
 Lines 100-171
 <br/>
+<br/>
 
 The next shader handles lighting and texturing calculations and similarly could use some extra documentation and the removal of line 122 which is not necessary for the function of the program. Additionally this function will be edited to remove all references to a second light source which will remove the repetition though alternately if we needed the second light we could probably stream line this with a separate function since the calculations performed on each light is quite similar.
+<br/>
 <br/>
 
 Lines 174-216
 <br/>
+<br/>
 
 The main function takes in any command line args and passes them along to our openGL initializing function. Then it calls all necessary startup functions before running the glutMainLoop function which keeps the program active. Then it performs some manual cleanup of openGL buffer objects before exiting. Again there is a lot of function calls here that could benefit from annotation on their purpose for the program.
+<br/>
 <br/>
 
 Lines 218-222
 <br/>
+<br/>
 
 Next is a small function that instructs openGL how to handle a window reassigning two global variables and passing that along to an openGL function that adjusts the viewpoint. Again comments and better encapsulation will improve the structure of this function making it part of a controller object. 
+<br/>
 <br/>
 
 Lines 224-315
 <br/>
+<br/>
 
 URenderGraphics is quite long as a function and handles a lot of responsibility therefore it would be better split into multiple pieces that handle some of the calculations and conditional camera positioning. In general, this function handles the input to our shaders conveying all necessary information in one place. Additional extra documentation would help clarify some of the design decisions here as well. This function will be simplified somewhat by the removal of position data for light source 2.
 <br/>
+<br/>
 
 Lines 317-336
+<br/>
 <br/>
 
 UCreateShader uses the data from our two shaders to initialize an active shader program that utilizes the data calculated to draw the object. This function is well documented and does garbage collection for the shader information once the shader program is initialized.
 Lines 339-493
 <br/>
+<br/>
 
 UCreateBuffers handles the actual calculations for the vertices and indices that make up the shape of the bookcase as well as shading and texture coordinates for each vertex. The vertices are broken down by location but the indices could use some comments detailing what they correspond to as well. Additionally some of the comments are out of date and erroneous for this version of the program. A lot of the update work will be focused on fixing and expanding the vertex values to fix various clipping issues due to overlapping values as well as adjusting the normals column to create a more natural effect from the lighting on the object.
+<br/>
 <br/>
 
 Lines 497-535
 <br/>
+<br/>
 
 These two functions instruct the openGL instance on how to handle key presses and releases. The  console prints are testing code that should be cleaned out other than the default case for our switch statement which if tweaked to say something like “key press invalid” will serve to inform the user that their key press is not a recognized key.  
+<br/>
 <br/>
 
 Lines 537-597
 <br/>
+<br/>
 
 The next two functions serve as handlers for detected mouse movement and input. These along with the keyboard functions could be rolled into a class with their reliance on global variables that all four use. UMouseClick lacks annotations and UMouseMove could use a few as well clarifying some of the math performed. 
 <br/>
+<br/>
 
 Lines 600-613
+<br/>
+<br/>
+
 This last function does the texture loading and uses openGL methods to bind the loaded texture to the openGL instance. There are multiple unnecessary prints to the console to be cleaned up as well as some additional annotation work to be done. 
 <br/>
 <br/>
 
 CSV To Hashtable Converter For Auction Data
 <br/>
+<br/>
+<br/>
+<br/>
 
 The purpose of this second artifact is to demonstrate a hash table with collision handling that can store and look up information about information loaded in from a csv file specially tuned to take input from an auction listing csv.
+<br/>
 <br/>
 
 Lines 7-16
 <br/>
+<br/>
 
 We start with some fairly standard C++ includes. Additionally we load in a locally stored CSV Parser library to take advantage of external resources and focus on just the hash table structure. Additionally as this is a fairly compact program with a small dependency list, we use the std namespace for simplicity.
+<br/>
 <br/>
 
 Lines  22-36
 <br/>
+<br/>
 
 Here we have some global definitions including a const that determines the size of the hash table which could possibly be moved to a static constant class member for the hash table class below instead. Additionally we have a declaration for a struct called Bid that mimics the necessary information from a single row of the CSV. This will require a few more members to cover the new requirements including properties for closing date, paid date, winning bid, and auction title. 
+<br/>
 <br/>
 
 Lines 46-60
 <br/>
+<br/>
 
 Next is the class definition for our hash table class which contains a private pointer member that points to a vector of Bid structs. Additionally we have a private function called hash which is only for use by the public facing Insert function. Finally we have declarations for a constructor, destructor, and functions covering insertion, deletion, searching and also a function that prints all members. This class will need to be upgraded to include a sortBy member and parameters for the search and remove functions will have to be renamed to suit their new roles.
+<br/>
 <br/>
 
 Lines 65-74
 <br/>
+<br/>
 
 Moving on to the definitions for the constructor and destructor, we initialize the previously declared pointer to point at an array of vectors with the Bid typing to create our hash table data structure. This 3-dimensional structure handles collisions between hashed bids by simply pushing them into the same vector. Additionally the destructor properly deallocates the memory used by this pointer afterwards. An addition will need to be made here for a passed in sortBy member.
+<br/>
 <br/>
 
 Lines 76-156
 <br/>
+<br/>
 
 Now we come to the class function definitions declared earlier. Each one is annotated with parameters, return values(if they’re not void), and a brief description of their purpose. First we have the hash function that takes in a key and performs the hashing operation returning a valid index for the bunchOfBids table. Insert takes in a Bid struct and after converting the necessary identifier to an int passes it down to the hash function using the returned index to place the Bid in the data structure. This will be modified to handle more types of data depending on the needs of the new Bid struct members but will fundamentally perform the same role with each sortBy type.
+<br/>
 <br/>
 
 PrintAll simply iterates over both dimensions of the data structure using 2 for loops and does a formatted print out of each individually hashed Bid and its place in the structure. Both of these loops are finite and rely on finite known quantities, one a constant value and the other being based on the size of each allocated for vector in our data structure. Remove takes in a string identifier and does the same conversion hashing operation that Insert does which is a possible area for streamlining by moving the conversion step to the hash function to cut down on repetition. The remove function then uses the hashed index number to locate the correct vector and iterates through the Bids inside calling erase if the vector erase function on the matching bid. Search returns a Bid using much the same process as the delete function leading to the potential that this iterator block could be moved to a separate function since only the end action is unique.
 <br/>
+<br/>
 
 Lines 167-211
+<br/>
 <br/>
 
 Next are methods that support the function of the hash table by prepping or displaying formatted data as a bridge for the csv to Bid struct conversion and proper display of searched bids. The first function is display bids which simply takes in a bid and prints the contents to the console. This will need to be expanded to include the planned new members of the Bid struct. Additionally this might be better organized as part of the Bid struct. LoadBids takes in the file system path of the csv file and a pointer to a hash table object. It implements the imported CSVParser class adding a printout of detected headers which might be better removed from the function and added to another function who’s purpose is just to get and print headers. Then it moves on to the meat of the function which creates a bid and populates it with data from the csv file. This loop runs until the iterator is equal to the number of rows in the csv ensuring every entry is read. The bid creation process is slightly cumbersome as instead of loading in everything with the constructor all properties are manually assigned one by one. Therefore the Bid constructor should be upgraded to handle assignment internally. This process also utilizes an unnecessary call of strToDouble for the passed in value to bid amount even though at no point is amount utilized as a double. This string to double will be phased out as it is unnecessary. The final step is to insert each constructed bid into our hash table using the Insert function. This csv to Bid loop is surrounded with a try catch to handle possible errors that might arise from the conversion process.
 <br/>
+<br/>
+
 
 Lines 229-313
+<br/>
 <br/>
 
 Last is the main function which currently handles all user input. This function is quite long and could be broken into pieces like processCLargs(Jamie Note: highlight 232-245), displayMenu(Jamie Note: highlight 257-264), callCSVLoader(Jamie Note: highlight 269-281), and displayRequestedBid(Jamie Note: highlight 288-302). Also the load bids input should have an additional numbered prompt for sortBy as our new hash table will need this property. Additionally the main user input switch case and the new sort by switch case to be added could benefit from a default statement that displays a message to the user that their input is invalid.
 <br/>
 <br/>
+<br/>
+<br/>
 
 RESTful API Server Using MongoDB
+<br/>
 <br/>
 
 The purpose of the third artifact is to create a Python based server that exposes a RESTful API that when started up allows the user to make calls to perform CRUD operations on a mongoDB database. This database contains information about the performance of various companies and the API includes several functions for performance reporting.
 <br/>
+<br/>
 
 Lines 1-12
+<br/>
 <br/>
 
 The script starts by importing libraries for our API including parts of bottle for handling incoming HTTP requests and pymongo for interfacing with our Mongo database. There is a slight redundancy of importing the whole bottle library and then importing only parts of it the next line down. Next is the definition of a connection to a mongoDB client which currently points to localhost but which will be upgraded to instead point at a hosted database through MongoDB’s cloud service Atlas. Then it requests and stores the market database and the stocks collection. This will be expanded to include an access collection which will be checked for user credentials before issuing a short login token to the user. 
 <br/>
+<br/>
 
 Lines 15-40
+<br/>
 <br/>
 
 These lines contain test code which will be removed for the final project but which served as useful tests of connectivity. Instead the first routes will be the login route and the token protected create login route. This will ensure database access is controlled and only someone previously authorized can add new credentials. The login route will execute a find query on the access collection and if it finds a match for the query params then it will create a new token object with a timestamp and randomized id returning the id to the user. Failing to find a match it will return a string reporting this to the user. All subsequent call handlers will implement a function to check the headers of the API call for an id and this will be matched against existing token objects to see if it matches a non-expired one.
 <br/>
+<br/>
 
 Lines 42-91
+<br/>
 <br/>
 
 The following functions implement client facing CRUD database operations to the user. Structurally they are all fairly simple taking in a request object provided by bottle with the headers, params, and body of the HTTP request. The necessary data is extracted then it tries a corresponding built in pymongo action using this data returning an error or a statement of success. There are a couple areas of opportunity for these functions including pre-processing the data for empty or erroneously formatted request parameters and returning the data found to the client instead of just printing it in the server instance log. Additionally there are several unnecessary print statements logging data for testing purpose that should be removed as they are unnecessary. (line 47)Additionally the create route does not pass along the reason for failure instead just returning that the operation failed. Lastly the delete and update routes use a GET request while they would more accurately be a DELETE and PUT respectively.
 <br/>
+<br/>
 
 Lines 93-123
+<br/>
 <br/>
 
 Taking the last 2 functions, the first function does an aggregate query for a particular industry query parameter returning the top 5 performers for that industry. Again the query parameter could use validation and the results are just printed to the server logs instead of returned to the client and in this case there is no error handling try-catch block which would be a worthwhile upgrade to make. The report route collates multiple requested objects into one result and passes along the response. Here too the upgrades of validation and returning vs. simply logging the result are necessary upgrades.
