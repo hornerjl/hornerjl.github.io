@@ -10,8 +10,7 @@
 Modern OpenGL Bookshelf 3D Model
 <br/>
 <br/>
-<br/>
-<br/>
+
 
 The purpose of the first artifact is to render a 3d bookshelf object using modern openGL complete with texture and lighting. Additionally mouse and keyboard controls are implemented to allow for a full 360 view of the object.
 <br/>
@@ -108,9 +107,9 @@ Lines 600-613
 This last function does the texture loading and uses openGL methods to bind the loaded texture to the openGL instance. There are multiple unnecessary prints to the console to be cleaned up as well as some additional annotation work to be done. 
 <br/>
 <br/>
+<br/>
 
 CSV To Hashtable Converter For Auction Data
-<br/>
 <br/>
 <br/>
 <br/>
