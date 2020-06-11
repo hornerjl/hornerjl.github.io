@@ -1,5 +1,11 @@
 # **Self Assesment**
 
+
+<details>
+    <summary>Click here for more!</summary>
+
+</details>
+
 ## **Code Review Before Final Code Revision**
 
 [![Code review video](https://img.youtube.com/vi/Ok3d9NTWEYE/0.jpg)](https://www.youtube.com/watch?v=Ok3d9NTWEYE)
