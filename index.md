@@ -2,7 +2,7 @@
 
 ## **Code Review Before Final Code Revision**
 
-[![Code review video]](https://github.com/hornerjl/hornerjl.github.io/blob/master/Code%20review/video.mp4)
+[![Code review video]](https://www.youtube.com/watch?v=Ok3d9NTWEYE)
 
 <details>
     <summary>Click here for video transcript</summary>
