@@ -112,7 +112,6 @@ This last function does the texture loading and uses openGL methods to bind the 
 CSV To Hashtable Converter For Auction Data
 <br/>
 <br/>
-<br/>
 
 The purpose of this second artifact is to demonstrate a hash table with collision handling that can store and look up information about information loaded in from a csv file specially tuned to take input from an auction listing csv.
 <br/>
@@ -176,7 +175,6 @@ Lines 229-313
 <br/>
 
 Last is the main function which currently handles all user input. This function is quite long and could be broken into pieces like processCLargs(Jamie Note: highlight 232-245), displayMenu(Jamie Note: highlight 257-264), callCSVLoader(Jamie Note: highlight 269-281), and displayRequestedBid(Jamie Note: highlight 288-302). Also the load bids input should have an additional numbered prompt for sortBy as our new hash table will need this property. Additionally the main user input switch case and the new sort by switch case to be added could benefit from a default statement that displays a message to the user that their input is invalid.
-<br/>
 <br/>
 <br/>
 <br/>
