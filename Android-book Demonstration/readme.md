@@ -1,1 +1,0 @@
-Repository for android programming the big nerd ranch guide
