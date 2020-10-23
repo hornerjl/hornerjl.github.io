@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/weather_image"
+    >
+
+    <TextView
+        android:id="@+id/textViewWeather"
+        android:layout_width="375dp"
+        android:layout_height="60dp"
+        android:text="@string/weather_now"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textStyle="bold|italic"
+        android:textSize="30sp"
+        android:background="#90ace6e6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028" />
+
+
+    <EditText
+        android:id="@+id/textInputEditText"
+        android:layout_width="411dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="364dp"
+        android:background="#90e6adad"
+        android:hint="@string/location_city_state"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWeather"
+        app:layout_constraintVertical_bias="1.0"
+        android:inputType="text"
+        />
+
+    <Spinner
+        android:id="@+id/menu_spinner"
+        android:layout_width="221dp"
+        android:layout_height="48dp"
+        android:background="#90e6adad"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/textInputEditText"
+        app:layout_constraintVertical_bias="0.082" />
+
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:drawableEnd="@drawable/arrow_right"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/next_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputEditText"
+        app:layout_constraintVertical_bias="0.946" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

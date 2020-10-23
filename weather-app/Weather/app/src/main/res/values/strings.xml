@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="next_button">Continue</string>
+    <string name="weather_now">Weather now!</string>
+    <string name="location_city_state">Enter Location: City, State</string>
+    <string name="information">Information</string>
+    <string name="weather">Weather</string>
+    <string-array name="menu_choice_array">
+        <item>current</item>
+        <item>hourly</item>
+        <item>daily</item>
+        <item>alerts</item>
+    </string-array>
+</resources>
