@@ -34,7 +34,7 @@ public class WeatherAPIs {
         String lng = "";
 
         address.replace(" ", "+");
-        String baseURLString = "http://www.mapquestapi.com";
+        String baseURLString = "https://www.mapquestapi.com";
         String path = "/geocoding/v1/address?key=" + mMapQuestAPIKey + "&location=" + address;
 
         try {
