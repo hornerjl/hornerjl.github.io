@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="portfolioStyle.css">
+    <script src="https://kit.fontawesome.com/303032f049.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<!-------- Header Section---------------> 
+
+<div id="Header">
+    <div class="container">
+        <nav>
+            <img src="images/logo2.JPG" alt="Logo" class="logo">
+            <ul id="sideMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-x" onclick="closeMenu()"></i>
+            </ul>       
+            <i class="fas fa-bars" onclick="openMenu()"></i>   
+        </nav>
+    </div>
+    <div class="header-text">
+        <p>Software Engineer</p>
+        <h1>Hi, I'm <span class="name-shadow">Jamie</span> Horner<br>From Nashua NH, USA</h1>
+    </div>    
+</div>
+
+<!-------- About Section---------------> 
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/portfoliopicture.png" alt="About Me Image">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation 
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li>
+                            <span>Software Engineering</span>
+                            <br>Designing and developing complete software solutions, 
+                                <br>Focusing on clean architecture, scalability, and maintainable code.
+                        </li>
+                        <li>
+                            <span>Full-Stack Development</span>
+                            <br>Building responsive user interfaces <br>Implementing back-end 
+                                logic for web and application projects.
+                        </li>
+                        <li><span>Programming Languages</span>
+                            <br>Python, <br>Java, <br>JavaScript, <br>HTML5, <br>CSS, <br>SQL, <br>NoSQL
+                        </li>
+                        <li><span>Libraries & Frameworks</span>
+                            <br>React, <br>Tkinter, <br>Pandas
+                        </li>
+                        <li><span>Developer Tools</span>
+                            <br>VS Code, <br>Sublime Text, <br>Git/GitHub, <br>Node.js
+                        </li>
+                        <li><span>Application Development</span>
+                            <br>Creating interactive web and desktop applications 
+                                with an emphasis on usability, <br>performance, and functionality.
+                            </li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li>
+                            <span>Custom Software Solutions </span>
+                            <br>Date - I develop tailored software tools—desktop apps, dashboards, 
+                            utilities, and small web applications—based on project requirements or 
+                            personal project ideas, showcasing practical problem-solving and functionality.
+                        </li>
+                        <li>
+                            <span>Web/Application Development Projects</span>
+                            <br>Date - Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                            Quia cupiditate quidem eum vitae accusantium distinctio, impedit illo quos similique 
+                            sequi sapiente quisquam quas harum fuga eos quod aut possimus! Eius?
+                        </li>
+                        <li>
+                            <span>UI Engineering, Prototyping & Design Projects</span>
+                            <br>Date - Designed and built user interfaces for web and 
+                            desktop applications, combining UI/UX planning, wireframing, 
+                            and prototyping  with actual implementation using React and 
+                            Tkinter. Focused on usability, accessibility, responsive layouts, 
+                            and functional interactive components. Projects demonstrate 
+                            full workflow from concept to working interface.
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>Bachelor of Science — Computer Science</span>
+                            <br>Southern New Hampshire University - 2020
+                                <p>Coursework includes: 
+                                <br>Software Engineering & Development, 
+                                <br>Data Structures & Algorithms, 
+                                <br>Database Systems (SQL & NoSQL), 
+                                <br>Web Development (HTML, CSS, JavaScript, React),
+                                <br>Desktop Application Development (Python, Tkinter), 
+                                <br>Operating Systems & Networking,
+                                <br>Human-Computer Interaction (UI/UX Design), 
+                                <br>Object-Oriented Programming (Python, Java),
+                                <br>Capstone/Project Work: Full-stack or desktop applications
+                                </p>
+                        </li>
+                        <li><span>Associates of Arts - Business Management and Administration</span>
+                            <br>University of Pheonix - 2011
+                                <p>Coursework includes: 
+                                <br>Principles of Management, 
+                                <br>Organizational Behavior, 
+                                <br>Business Communications, 
+                                <br>Accounting Fundamentals (Financial & Managerial), 
+                                <br>Marketing Principles, 
+                                <br>Human Resource Management, 
+                                <br>Business Law / Legal Environment of Business, 
+                                <br>Economics (Microeconomics & Macroeconomics), 
+                                <br>Operations Management, 
+                                <br>Project Management Fundamentals, 
+                                <br>Entrepreneurship and Small Business Management, 
+                                <br>Business Ethics,
+                                <br>Human-computer interaction.
+                                </p>
+                        </li>
+                        <li><span>Certifications & Continuous Learning</span>
+                            <br>Certifications and Learning<br><br>
+                                <p>Date - Certification<br>
+                                Date - Certification<br>
+                                Date - Certification<br><br>
+                                Ongoing commitment to professional development through online courses, certifications, 
+                                and self-directed learning in areas such as advanced programming, web development frameworks, 
+                                UI/UX design principles, and emerging technologies in software engineering.
+                                </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-------- Services Section---------------> 
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services
+        </h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code">
+                </i>
+                <h2>Full-Stack Application Development
+                </h2>
+                <p>I build complete web and desktop applications for personal projects, 
+                    demonstrating clean architecture, front-end interfaces, 
+                    and backend logic.
+                </p>
+                <a href="#">Learn More
+                </a>
+            </div>
+            <div>
+                <i class="fa-solid fa-crop">
+                </i>
+                <h2>UI/UX & Responsive Web Design
+                </h2>
+                <p>I design user-friendly, responsive interfaces for web and application projects, 
+                    applying modern design principles and usability best practices.
+                </p>
+                <a href="#">Learn More
+                </a>
+            </div>
+            <div>
+                <i class="fa-solid fa-handshake">
+                </i>
+                <h2>Custom Software Solutions
+                </h2>
+                <p>I develop tailored software tools—desktop apps, Dashboards, Utilities, 
+                    and small web applications—based on project requirements or personal 
+                    project ideas, showcasing practical problem-solving and functionality.
+                </p>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-------- Portfolio Section--------------->
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work
+        </h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/portfoliowebsite.JPG" alt="Project 1 Image">
+                <div class="layer">
+                    <h3>Project Title 1
+                    </h3>
+                    <p>Brief description of Project 1.
+                    </p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>    
+            </div>
+            <div class="work">
+                <img src="images/portfoliowebsite2.JPG" alt="Project 2 Image">
+                <div class="layer">
+                    <h3>Project Title 2
+                    </h3>
+                    <p>Brief description of Project 2.
+                    </p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div> 
+            </div>
+            <div class="work">
+                <img src="images/portfoliowebsite3.JPG" alt="Project 3 Image">
+                <div class="layer">
+                    <h3>Project Title 3
+                    </h3>
+                    <p>Brief description of Project 3.
+                    </p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div> 
+            </div>
+        </div>
+        <a href="#" class="btn">See More Projects
+        </a>
+    </div>
+</div>
+
+<!-------- Contact Section--------------->
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left-col">
+                <h1 class="sub-title">Contact Me
+                </h1>
+                <p><i class="fa-solid fa-paper-plane"></i>horner_jamie@yahoo.com</p>
+                <p><i class="fa-solid fa-phone"></i>717-525-4953</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/jamielhorner/"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/hornerjl/hornerjl.github.io"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <a href="images/Resume  entry level SE professional.docx" download class="btn btn2">Download Resume</a>
+            </div>
+            <div class="contact-right-col">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                    <textarea rows="8" name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn2">Send Message</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Made with <i class="fa-regular fa-heart"></i> by Jamie Horner</p>
+    </div>
+</div>
+
+<!-------- Scripts--------------->
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+<script>
+
+    var sideMenu = document.getElementById("sideMenu");
+
+    function openMenu(){
+        sideMenu.style.right ="0"
+    }
+    function closeMenu(){
+        sideMenu.style.right ="-200px"
+    }
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbybkEKfdeRTzOJXbDUh-OPBpP095UMp4zx0eKuzGD_3sttv2h5FSEWfZKKhKYsltJSF/exec';
+    const form = document.forms['submit-to-google-sheet'];
+    const msg = document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+                msg.innerHTML = ("Message sent!"); 
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                }, 5000) 
+                form.reset();
+            })
+            .catch(error => alert("Error: " + error.message));
+    });
+
+});
+</script>
+
+
+</body>
+</html>
